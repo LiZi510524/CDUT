@@ -1,0 +1,80 @@
+{
+	"Name": "20-20k带通滤波器",
+	"Description": "创新实验项目",
+	"Tool": "FW",
+	"Version": "1.2",
+	"Design": {
+		"visitedTabs": [
+			"filter-type",
+			"specifications",
+			"components"
+		],
+		"filterType": "bandPass",
+		"specifications": {
+			"gain": 0,
+			"gainUnit": "dB",
+			"passbandAttenuation": -3,
+			"passbandFrequency": 20000,
+			"stopbandAttenuation": -40,
+			"stopbandFrequency": 80000,
+			"filterResponseValue": 0.04,
+			"filterResponseSlider": "41",
+			"centerFrequency": 640
+		},
+		"components": {
+			"vsPlus": 5,
+			"vsMinus": -5,
+			"optimization": "Noise",
+			"optimizationPreference": "nonSpecific",
+			"compensateForGbw": false,
+			"preferredAlgorithms": {
+				"sallenKey|lowPass": "lowpassV2"
+			},
+			"stages": [
+				{
+					"stageLetter": "A",
+					"componentSizing": 70,
+					"gain": -1,
+					"gainEnabled": false,
+					"implementation": "sallenKey",
+					"opAmps": "AD8676"
+				},
+				{
+					"stageLetter": "B",
+					"componentSizing": 70,
+					"gain": -1,
+					"gainEnabled": false,
+					"implementation": "sallenKey",
+					"opAmps": "AD8676"
+				},
+				{
+					"stageLetter": "C",
+					"componentSizing": 117,
+					"gain": -1,
+					"gainEnabled": false,
+					"implementation": "sallenKey",
+					"opAmps": "AD8676"
+				},
+				{
+					"stageLetter": "D",
+					"componentSizing": 117,
+					"gain": -1,
+					"gainEnabled": false,
+					"implementation": "sallenKey",
+					"opAmps": "AD8676"
+				}
+			],
+			"recommendedAmps": [],
+			"sortOrder": [
+				1,
+				3,
+				2,
+				0
+			]
+		},
+		"tolerances": {},
+		"nextSteps": {}
+	},
+	"CreatedDate": "2024-12-16 09:00:23 AM",
+	"UpdatedDate": "2024-12-16 09:00:23 AM"
+}
